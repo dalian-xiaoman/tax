@@ -3,7 +3,7 @@ module.exports = {
   summary: 'my customized rule for AnyProxy',
   // 发送请求前拦截处理
   *beforeSendRequest(requestDetail) { /* ... */ },
-  // 发送响应前处理
+  // 发送响应前处理1
   *beforeSendResponse(requestDetail, responseDetail) { /* ... */ },
   // 是否处理https请求
   *beforeDealHttpsRequest(requestDetail) { /* ... */ },
