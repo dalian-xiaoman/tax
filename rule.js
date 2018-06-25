@@ -80,7 +80,7 @@ module.exports = {
    * @returns
    */
   *beforeDealHttpsRequest(requestDetail) {
-    return null;
+    return false;
   },
 
   /**
