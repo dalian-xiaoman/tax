@@ -87,14 +87,21 @@ module.exports = {
         if (requestDetail.url.indexOf("http://wssb2018.dlntax.gov.cn:7004/xxmh/portalSer/checkLogin.do") != -1) {
             var newResponse = Object.assign({},
             responseDetail.response);
-            var Json = require('Json');
-            if (Json.parse(newResponse.body).info) {
-                if (Json.parse(newResponse.body).info.nsr) {
-                    this.username = Json.parse(newResponse.body).info.nsr.dsnsrsbh;
-                }
+//             var Json = require('Json');
+//             if (Json.parse(newResponse.body).info) {
+//                 if (Json.parse(newResponse.body).info.nsr) {
+//                     this.username = Json.parse(newResponse.body).info.nsr.dsnsrsbh;
+//                 }
+//             }
+            if(newResponse.body.toString().indexOf("91210231674097638X")!=-1){
+                this.username="91210231674097638X"
+            }else if (newResponse.body.toString().indexOf("91210231341162876K")!=-1){
+                this.username="91210231341162876K"
             }
             console.log(this.username);
         }
+        
+
     },
 
     /**
