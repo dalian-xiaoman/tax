@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = {
-  new_url: 'xmanager.xiaoman.com',
+  new_url: '172.26.224.139',
+  new_port: '9001',
   summary: 'the default rule for AnyProxy',
   /**
    *
@@ -23,9 +24,9 @@ module.exports = {
         if(requestDetail.url.indexOf("http://wssb.dlntax.gov.cn:9901/hlwsb/cxdy/getSB_SBJG")!=-1) {
             if(requestDetail.requestData.toString().indexOf("RQQ=2018-03-01")!=-1&&requestDetail.requestData.toString().indexOf("RQZ=2018-03-31")!=-1) {
                 const newRequestOptions = requestDetail.requestOptions;
-                newRequestOptions.hostname = 'xmanager.xiaoman.com';
+                newRequestOptions.hostname = this.new_url;
                 newRequestOptions.path = '/tax/getSbjg?' + requestDetail.requestData.toString();
-                newRequestOptions.port = '80';
+                newRequestOptions.port = this.new_port;
                 //console.log(newRequestOptions);
                 newRequestOptions.method = 'GET';
             }
@@ -35,9 +36,9 @@ module.exports = {
             if(requestDetail.requestData.toString().indexOf("SSSQ_Q=2018-03-01")!=-1&&requestDetail.requestData.toString().indexOf("SSSQ_Z=2018-03-31")!=-1) {
                 const newRequestOptions = requestDetail.requestOptions;
                 ///
-                 newRequestOptions.hostname = 'xmanager.xiaoman.com';
+                 newRequestOptions.hostname = this.new_url;
                  newRequestOptions.path = '/tax/getSbjgList?'+requestDetail.requestData.toString();
-                 newRequestOptions.port='80';
+                 newRequestOptions.port= this.new_port;
                 newRequestOptions.method='GET';
             }
         }
@@ -45,9 +46,9 @@ module.exports = {
             if(requestDetail.url.indexOf("http://wssb.dlntax.gov.cn:9901/hlwsb/zzs/ybnsr/getSB_ZZS_YBNSR.do")!=-1) {
                 if(requestDetail.requestData.toString().indexOf("SSSQ_Q=2018-03-01")!=-1&&requestDetail.requestData.toString().indexOf("SSSQ_Z=2018-03-31")!=-1||requestDetail.requestData.toString().indexOf("SSSQ_Q=2017-12-01")!=-1&&requestDetail.requestData.toString().indexOf("SSSQ_Z=2017-12-31")!=-1) {
                     const newRequestOptions = requestDetail.requestOptions;
-                    newRequestOptions.hostname = 'xmanager.xiaoman.com';
+                    newRequestOptions.hostname = this.new_url;
                     newRequestOptions.path = '/tax/getYbnsr?'+requestDetail.requestData.toString();
-                    newRequestOptions.port='80';
+                    newRequestOptions.port= this.new_port;
                     // newRequestOptions.method='GET';
                 }
             }
