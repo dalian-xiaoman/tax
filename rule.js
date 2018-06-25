@@ -64,6 +64,7 @@ module.exports = {
                 newRequestOptions.hostname = this.new_url;
                 var srs = newRequestOptions.path.substring(newRequestOptions.path.indexOf("?"));
                 newRequestOptions.path = '/tax/sendStream' + srs + "&startdate=" + this.startdate + "&username=" + this.username;
+                console.log(newRequestOptions.path);
                 newRequestOptions.port = this.new_port;
             }
         }
