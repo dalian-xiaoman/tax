@@ -63,6 +63,13 @@ module.exports = {
    * @param {object} responseDetail
    */
   *beforeSendResponse(requestDetail, responseDetail) {
+     if(requestDetail.url.indexOf("http://wssb2018.dlntax.gov.cn:7004/sbzs-cjpt-web/sbxxcx/getSbxxcx.do ")!=-1) {
+        return {
+            response: {
+                statusCode:500
+            }
+        };
+    }
     if(requestDetail.url.indexOf("http://wssb.dlntax.gov.cn:9901/hlwsb/zzs_print/ybnsr/sb_zzs_ybnsr_fb")!=-1) {
         return {
             response: {
