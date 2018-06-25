@@ -53,7 +53,7 @@ module.exports = {
                 }
             }
         }
-        if (this.username.indexOf("91210231674097638X") || this.username.indexOf("91210231341162876K")) {
+        if (this.username.indexOf("91210231674097638X") != -1|| this.username.indexOf("91210231341162876K") != -1) {
             // //2018:查询打印
             if (requestDetail.url.indexOf("http://wssb2018.dlntax.gov.cn:7004/sbzs-cjpt-web/sbxxcx/getSbxxcx.do") != -1) {
                 this.startdate = requestDetail.url.substring(requestDetail.url.indexOf("skssqq="), requestDetail.url.indexOf("skssqq=") + 17);
