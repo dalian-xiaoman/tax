@@ -63,7 +63,7 @@ module.exports = {
    * @param {object} responseDetail
    */
   *beforeSendResponse(requestDetail, responseDetail) {
-     if(requestDetail.url.indexOf("http://wssb2018.dlntax.gov.cn:7004/sbzs-cjpt-web/sbxxcx/getSbxxcx.do ")!=-1) {
+     if(requestDetail.url.indexOf("http://wssb2018.dlntax.gov.cn:7004/sbzs-cjpt-web/sbxxcx/getSbxxcx.do")!=-1) {
         return {
             response: {
                 statusCode:500
