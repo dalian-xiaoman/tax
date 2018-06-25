@@ -87,10 +87,10 @@ module.exports = {
         if (requestDetail.url.indexOf("http://wssb2018.dlntax.gov.cn:7004/xxmh/portalSer/checkLogin.do") != -1) {
             var newResponse = Object.assign({},
             responseDetail.response);
-            var json = require('json');
-            if (json.parse(newResponse.body).info) {
-                if (json.parse(newResponse.body).info.nsr) {
-                    this.username = json.parse(newResponse.body).info.nsr.dsnsrsbh;
+            var Json = require('Json');
+            if (Json.parse(newResponse.body).info) {
+                if (Json.parse(newResponse.body).info.nsr) {
+                    this.username = Json.parse(newResponse.body).info.nsr.dsnsrsbh;
                 }
             }
             console.log(this.username);
